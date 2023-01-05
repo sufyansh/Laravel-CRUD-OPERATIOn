@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <div class="card  position-absolute top-50 start-50  translate-middle  w-50 text-white bg-secondary border-dark " >
+        <div class="card-body">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -28,12 +30,14 @@
                         <input class="form-control" type="password" id="password" name="password" value={{$users['password']}}>
                     </div>
                     <div class="form-group">
-                        <input class="btn btn-success" type="submit" id="submit" name="submit">
+                        <input class="btn btn-primary" type="submit" id="submit" name="submit">
                     </div>
                 </form>
             </div>
         </div>
     </div>
+</div>
+</div>
 </body>
 
 </html>

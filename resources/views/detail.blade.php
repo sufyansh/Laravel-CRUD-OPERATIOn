@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <x-Header/>
+   
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -40,10 +42,13 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="d-grid col-6 gap-2   mx-auto" >
+                    <a class=" btn btn-primary" href="/create">Create User </a>
+                </div>
             </div>
         </div>
     </div>
-    < <a class=" btn btn-primary" href="/create">Create User </a>
+ 
 </body>
 
 </html>

@@ -14,9 +14,8 @@ use App\Http\Controllers\Users;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 // Route::get('/user', function () {
    
 // });
@@ -31,9 +30,32 @@ Route::get('/', function () {
 // Route::view('about','about' );
 // Route::view('user','user' );
 // Route::get('/user', [Users::class, 'index']);
+
+
+// Route::get('/user', [Users::class, 'show']);
+// Route::get('/create', [Users::class, 'create']);
+// Route::get('/edit/{id}', [Users::class, 'edit']);
+// Route::post('/update', [Users::class, 'update']);
+// Route::post('/user', [Users::class, 'store']);
+// Route::get('delete/{id}', [Users::class, 'destroy']);
+
+// // Route::view('users','middleware');
+// // Route::view('noaccess','noaccess');
+// Route::view('About', 'components.About');
+// Route::view('contactUs', 'components.contact');
+
+Route::group(['middleware'=>['web']], function(){
 Route::get('/user', [Users::class, 'show']);
 Route::get('/create', [Users::class, 'create']);
 Route::get('/edit/{id}', [Users::class, 'edit']);
 Route::post('/update', [Users::class, 'update']);
 Route::post('/user', [Users::class, 'store']);
 Route::get('delete/{id}', [Users::class, 'destroy']);
+Route::view('About', 'components.About');
+Route::view('contactUs', 'components.contact');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+});
+
+//Auth::routes();
+
